@@ -174,7 +174,7 @@ broken.default <- function(model, new_observation, data, direction = "up", ..., 
                           predict.function = predict) {
   # just in case only some variables are specified
   common_variables <- intersect(colnames(new_observation), colnames(data))
-  new_observation <- new_observation[,common_variables]
+  new_observation <- new_observation[,common_variables, drop = FALSE]
   data <- data[,common_variables]
 
   if (direction == "up") {
